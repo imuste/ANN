@@ -1,0 +1,87 @@
+/*****************************************************************************
+* Artificial Neural Network
+* Author: Isabel Muste
+* Program Language: Python
+*****************************************************************************/
+
+This program is an Artificial Neural Network implemented from scratch. The
+program uses a set of data samples of different types of Iris flowers and
+trains the network with a portion of these samples. After this, the network
+will be tested using a different set of samples, and lastly, the program
+will allow the user to input flower features to get the flower classified.
+
+
+/*****************************************************************************
+ RUNNING THE PROGRAM
+*****************************************************************************/
+The program can be run using the command "python3 irisClassification.py". 
+The user is expected to have the pandas, numpy, sklearn, textwrap, and time
+modules installed when running the program.
+
+When the user runs the program, the first things displayed is a short 
+description of the program and how it can be used. 
+Then, the training of the network is done and the user will be shown a 
+summary of the rounds and their losses which shows that the loss goes down as 
+the network is trained. 
+After this the network will be tested and the user is shown the accuracy of
+the classification as a percentage.
+Lastly, the user is presented with a list of flower attributes that the user
+can enter to get the type of iris of the entered sample as classified by
+the network.
+
+
+/*****************************************************************************
+ IRISCLASSIFICATION.PY
+*****************************************************************************/
+In this module, the Artificial Neural Network algorithm is executed. 
+
+- First, the sample data is split up into 70% for training, 20% for testing,
+and 10% for the validation set. This distribution ensures that the network
+has enough data to be properly trained and tested while leaving some samples
+to be used as validation points.
+
+- The input neurons are set to 4, the hidden neurons to 5, and the output 
+neurons to 3. The learning rate is 0.1 and the number of rounds that the 
+algorithm will do when training is 1500. The weights and biases are initialized 
+to be randomly generated.
+
+- Once the variables for the network are set, the network is trained using
+forward propagation as well as backward propagation. After the training of the 
+network, the weights and biases will be set to minimize the error of 
+classification.
+
+- After the training has been done, the network is tested using the testing 
+data set and the overall accuracy of the classification is computed and
+displayed.
+
+- Lastly, the user is presented with the samples in the validation set which
+can be entered to be classified by the network.
+
+
+
+/*****************************************************************************
+ CLARIFICATIONS / REASONINGS
+*****************************************************************************/
+- The training is done with forward as well as backward propagation which 
+allows the network to first predict an output, then compute the loss 
+(inaccuracy) of that output, and then adjust the weights and biases to 
+reduce the loss and error. Using these steps, allows the network to over time, 
+get the most optimal weights and biases to later use for the classification of 
+unseen data.
+
+- The activation function used is the Sigmoid function as this is a good 
+activation function specifically for shallow networks which is what this
+network is as it has just one hidden layer.
+
+- The number of rounds for the training of the network is set to 1500 as this
+proved to give the most accuracy for the classification with the network.
+Similarly, the learning rate is set to 0.1 as this proved to avoid stagnation
+often found with smaller learning rates, but also ensured that the optimal
+point is reached.
+
+- The weights and biases are initially set randomly as the network will be 
+able to successfully optimize these values during training so that these
+can later be used to correctly classify samples.
+
+
+
